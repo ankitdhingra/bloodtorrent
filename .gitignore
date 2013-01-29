@@ -1,0 +1,8 @@
+node_modules/
+.idea/
+ios/bloodtorrent.xcodeproj/project.pbxproj
+web/apache/logs/
+artifacts/
+.sass-cache/
+web/public/*
+ios/public/*

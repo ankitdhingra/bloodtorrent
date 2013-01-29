@@ -63,6 +63,7 @@
 				<string>63D919550D0640C4B41BFE06</string>
 				<string>4099F1B8C656493CB6E17481</string>
 				<string>21C2BB8427F549F1A775EF92</string>
+				<string>610C03581F4649DBA412803C</string>
 			</array>
 			<key>isa</key>
 			<string>PBXGroup</string>
@@ -89,6 +90,7 @@
 				<string>AA68C525EC724378A2584BDE</string>
 				<string>41841307164D48A68E3EA113</string>
 				<string>74562CECD6324B479BB2F7B6</string>
+				<string>2CEC72EB661541498541E3ED</string>
 			</array>
 			<key>isa</key>
 			<string>PBXFrameworksBuildPhase</string>
@@ -109,6 +111,30 @@
 			<string>System/Library/Frameworks/CoreGraphics.framework</string>
 			<key>sourceTree</key>
 			<string>SDKROOT</string>
+		</dict>
+		<key>2410E46467BE494D8F92574F</key>
+		<dict>
+			<key>buildActionMask</key>
+			<string>2147483647</string>
+			<key>files</key>
+			<array/>
+			<key>inputPaths</key>
+			<array/>
+			<key>isa</key>
+			<string>PBXShellScriptBuildPhase</string>
+			<key>name</key>
+			<string>Copy Pods Resources</string>
+			<key>outputPaths</key>
+			<array/>
+			<key>runOnlyForDeploymentPostprocessing</key>
+			<string>0</string>
+			<key>shellPath</key>
+			<string>/bin/sh</string>
+			<key>shellScript</key>
+			<string>"${SRCROOT}/Pods/Pods-resources.sh"
+</string>
+			<key>showEnvVarsInLog</key>
+			<string>1</string>
 		</dict>
 		<key>263A10298815488B8112BE37</key>
 		<dict>
@@ -144,6 +170,8 @@
 		</dict>
 		<key>293CC0B84F8A4BE39FB33D25</key>
 		<dict>
+			<key>baseConfigurationReference</key>
+			<string>BE7006ED59094288A99B4CB5</string>
 			<key>buildSettings</key>
 			<dict>
 				<key>ALWAYS_SEARCH_USER_PATHS</key>
@@ -203,6 +231,15 @@
 			<key>name</key>
 			<string>Release</string>
 		</dict>
+		<key>2CEC72EB661541498541E3ED</key>
+		<dict>
+			<key>fileRef</key>
+			<string>610C03581F4649DBA412803C</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+			<key>settings</key>
+			<dict/>
+		</dict>
 		<key>38021AD5B4404B558626A1FA</key>
 		<dict>
 			<key>fileRef</key>
@@ -223,6 +260,7 @@
 				<string>21B24F610F7E46B88F2A0541</string>
 				<string>8E205EAA193D474B9514D3EF</string>
 				<string></string>
+				<string>2410E46467BE494D8F92574F</string>
 			</array>
 			<key>buildRules</key>
 			<array/>
@@ -360,6 +398,21 @@
 			<key>sourceTree</key>
 			<string>&lt;group&gt;</string>
 		</dict>
+		<key>610C03581F4649DBA412803C</key>
+		<dict>
+			<key>explicitFileType</key>
+			<string>archive.ar</string>
+			<key>includeInIndex</key>
+			<string>0</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>name</key>
+			<string>libPods.a</string>
+			<key>path</key>
+			<string>libPods.a</string>
+			<key>sourceTree</key>
+			<string>BUILT_PRODUCTS_DIR</string>
+		</dict>
 		<key>63D919550D0640C4B41BFE06</key>
 		<dict>
 			<key>includeInIndex</key>
@@ -396,6 +449,8 @@
 		</dict>
 		<key>67260B4580A942179B31993B</key>
 		<dict>
+			<key>baseConfigurationReference</key>
+			<string>BE7006ED59094288A99B4CB5</string>
 			<key>buildSettings</key>
 			<dict>
 				<key>ALWAYS_SEARCH_USER_PATHS</key>
@@ -570,6 +625,21 @@
 			<key>sourceTree</key>
 			<string>SOURCE_ROOT</string>
 		</dict>
+		<key>BE7006ED59094288A99B4CB5</key>
+		<dict>
+			<key>includeInIndex</key>
+			<string>1</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>text.xcconfig</string>
+			<key>name</key>
+			<string>Pods.xcconfig</string>
+			<key>path</key>
+			<string>Pods/Pods.xcconfig</string>
+			<key>sourceTree</key>
+			<string>SOURCE_ROOT</string>
+		</dict>
 		<key>BFDB50E0F7BE45498A03447F</key>
 		<dict>
 			<key>fileRef</key>
@@ -619,6 +689,7 @@
 				<string>5C6DDE2C1B4E4A1392EC22FE</string>
 				<string>A6A714ED0F0B47668BAC4726</string>
 				<string>C70067E6D0BF4C2D983AC93D</string>
+				<string>BE7006ED59094288A99B4CB5</string>
 			</array>
 			<key>isa</key>
 			<string>PBXGroup</string>
