@@ -9,6 +9,7 @@
 
     - Dir.foreach(Calatrava::Project.current.mobile_web.styles_build_dir) do |file|
       %link(rel="stylesheet" href="styles/#{File.basename(file)}")
+    %script(type="text/javascript" src="scripts/repository.donationRequest.js")
 
   %body
     %div#app_container.container
