@@ -1,0 +1,8 @@
+%div#requestList.page
+
+  %script#donationRequestTmpl(type="text/html")
+    {{#donationRequests}}
+    <li class="donation-request"> {{group}} {{quantity}} </li>
+    {{/donationRequests}}
+  %h3 Donation Request
+  %ul#request_list

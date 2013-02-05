@@ -7,12 +7,12 @@
   example.converter.start = function() {
     example.converter.controller({
       views: {
-        conversionForm: calatrava.bridge.pages.pageNamed("conversionForm")
+        conversionForm: calatrava.bridge.pages.pageNamed("requestList")
       },
       changePage: calatrava.bridge.changePage,
       ajax: calatrava.bridge.request
     });
-    return calatrava.bridge.changePage("conversionForm");
+    return calatrava.bridge.changePage("requestList");
   };
 
 }).call(this);

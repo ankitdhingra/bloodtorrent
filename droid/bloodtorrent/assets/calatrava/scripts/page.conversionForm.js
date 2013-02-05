@@ -3,7 +3,7 @@
 
   if (calatrava.pageView == null) calatrava.pageView = {};
 
-  calatrava.pageView.conversionForm = function() {
+  calatrava.pageView.requestList = function() {
     var $p, $page, renderCurrencyDropdown, renderSection;
     $page = $('#conversionForm');
     $p = function(sel) {

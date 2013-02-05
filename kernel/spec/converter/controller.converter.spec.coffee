@@ -1,9 +1,9 @@
 exports = require 'spec_helper'
 
-example = exports.example
+example = exports.bloodTorrent
 stubView = exports.stubView
 
-describe 'converter controller', ->
+describe 'donationRequest controller', ->
   ajax = null
   changePage = null
   views = null
@@ -14,24 +14,24 @@ describe 'converter controller', ->
       if views[targetPage].boundEvents['pageOpened']?
         views[targetPage].trigger 'pageOpened'
     views =
-      conversionForm: stubView.create('converterForm')
+      requestList: stubView.create('donationRequestForm')
 
-    subject = example.converter.controller
+    subject = bloodTorrent.donationRequest.controller
       changePage: changePage
       views: views
       ajax: ajax
 
   it 'should bind the convert event', ->
-    expect(views.conversionForm.boundEvents['convert']).not.toBeUndefined()
+    expect(views.requestList.boundEvents['convert']).not.toBeUndefined()
 
   describe 'converting', ->
 
     beforeEach ->
-      views.conversionForm.fieldContains 'in_currency', 'USD'
-      views.conversionForm.fieldContains 'out_currency', 'AUD'
-      views.conversionForm.fieldContains 'in_amount', 100
-      views.conversionForm.trigger 'convert'
+      views.requestList.fieldContains 'in_currency', 'USD'
+      views.requestList.fieldContains 'out_currency', 'AUD'
+      views.requestList.fieldContains 'in_amount', 100
+      views.requestList.trigger 'convert'
 
     it 'should render the correctly converted amount', ->
-      expect(views.conversionForm.render).toHaveBeenCalledWith
+      expect(views.requestList.render).toHaveBeenCalledWith
         out_amount: 96

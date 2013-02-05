@@ -26,12 +26,12 @@ function recursiveExtend(moduleToExtend, module) {
 }
 
 example = {};
-recursiveExtend(example, require('controller.converter').example);
+recursiveExtend(example, require('controller.donationRequest').bloodTorrent);
 
 exports.stubView = stubView;
 exports.tw = tw;
 exports.appDir = __dirname + "/../app";
-exports.example = example;
+exports.bloodTorrent = example;
 
 // Custom matchers:
 beforeEach(function() {

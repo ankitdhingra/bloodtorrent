@@ -29,12 +29,12 @@
       var inRate, outRate;
       outRate = currencyRate[outCurrency];
       inRate = currencyRate[inCurrency];
-      return views.conversionForm.render({
+      return views.requestList.render({
         out_amount: (Math.round(amount * (outRate / inRate) * 100)) / 100
       });
     };
     convert = function() {
-      return views.conversionForm.get('in_amount', function(inAmount) {
+      return views.requestList.get('in_amount', function(inAmount) {
         if (inAmount === "") {
           return calatrava.confirm("No amount to convert. Convert one instead?", function(convertOne) {
             if (convertOne) return performConversion(1);
@@ -44,24 +44,24 @@
         }
       });
     };
-    views.conversionForm.bind('convert', convert);
-    views.conversionForm.bind('selectedInCurrency', function() {
-      return views.conversionForm.get('in_currency', function(in_currency) {
+    views.requestList.bind('convert', convert);
+    views.requestList.bind('selectedInCurrency', function() {
+      return views.requestList.get('in_currency', function(in_currency) {
         inCurrency = in_currency;
-        return views.conversionForm.render({
+        return views.requestList.render({
           outCurrencies: currencyDropdownViewMessage(outCurrency, inCurrency)
         });
       });
     });
-    views.conversionForm.bind('selectedOutCurrency', function() {
-      return views.conversionForm.get('out_currency', function(out_currency) {
+    views.requestList.bind('selectedOutCurrency', function() {
+      return views.requestList.get('out_currency', function(out_currency) {
         outCurrency = out_currency;
-        return views.conversionForm.render({
+        return views.requestList.render({
           inCurrencies: currencyDropdownViewMessage(inCurrency, outCurrency)
         });
       });
     });
-    return views.conversionForm.render({
+    return views.requestList.render({
       inCurrencies: currencyDropdownViewMessage(inCurrency, outCurrency),
       outCurrencies: currencyDropdownViewMessage(outCurrency, inCurrency),
       in_amount: 1
