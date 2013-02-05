@@ -7,6 +7,9 @@
     - Calatrava::Project.current.mobile_web.scripts.each do |filename|
       %script(type="text/javascript" src="#{filename}")
 
+    - Dir.foreach(Calatrava::Project.current.mobile_web.styles_build_dir) do |file|
+      %link(rel="stylesheet" href="styles/#{File.basename(file)}")
+
   %body
     %div#app_container.container
       - Calatrava::Project.current.mobile_web.haml_files.each do |hf|

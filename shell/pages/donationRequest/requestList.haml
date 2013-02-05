@@ -2,7 +2,7 @@
 
   %script#donationRequestTmpl(type="text/html")
     {{#donationRequests}}
-    <li class="donation-request"> {{group}} {{quantity}} </li>
+    <li class="donationRequest" data-request-id={{id}}> {{blood_group}} {{quantity}} </li>
     {{/donationRequests}}
   %h3 Donation Request
   %ul#request_list

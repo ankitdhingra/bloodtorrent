@@ -3,7 +3,8 @@ calatrava.pageView ?= {}
 calatrava.pageView.requestList = ->
 
   #TODO: refactor out
-  $page = $('#requestList')
+  page_id = '#requestList'
+  $page = $(page_id)
   $p = (sel)-> $(sel, $page)
 
   renderRequestList = ($ul, donationRequests)->
@@ -17,7 +18,8 @@ calatrava.pageView.requestList = ->
 
   bind: (event, handler) ->
     console.log "event: #{event}"
-    $p("." + event).off('click').on 'click', handler
+    selector = "." + event
+    $page.on 'click', selector, (e) -> handler($(this).data('request-id'))
 
   render: (message) ->
     console.log('rendering...', message)
@@ -27,5 +29,10 @@ calatrava.pageView.requestList = ->
     console.log('getting...', field)
     $page.find("#" + field).val()
 
-  show: -> console.log('showing...')
-  hide: -> console.log('hiding...')
+  show: ->
+    console.log('showing...')
+    $page.show()
+
+  hide: ->
+    console.log('hiding...')
+    $page.hide()

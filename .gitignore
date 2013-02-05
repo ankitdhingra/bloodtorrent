@@ -6,3 +6,4 @@ artifacts/
 .sass-cache/
 web/public/*
 ios/public/*
+ios/Pods/Pods.xcodeproj/
