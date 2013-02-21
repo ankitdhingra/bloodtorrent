@@ -13,8 +13,10 @@ bloodTorrent.donationRequest.donationRequestRepository = () ->
 
   extractRequestFrom: (responseData) ->
     _.map JSON.parse(responseData), (request) ->
-      group: request.blood_group
+      id: request._id
+      blood_group: request.blood_group
       quantity: request.quantity
+      contact_details: request.contact_details
     
   get: (options) ->
     apiName = "donation/search"

@@ -15,7 +15,8 @@ bloodTorrent.donationRequest.controller = ({views, repositories, changePage, aja
     _.map donationRequests, (c) ->
       id: c.id,
       blood_group: c.blood_group,
-      quantity: c.quantity
+      quantity: c.quantity,
+      contact_details: contact_details
 
   getRequestDetail = (requestId) ->
     {id: 1, blood_group: "O+", quantity:"200ml", latitude:18.5236 , longitude:73.8478, contact_details: "+919923700612"}
