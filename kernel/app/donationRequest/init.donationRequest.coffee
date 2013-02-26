@@ -6,7 +6,8 @@ bloodTorrent.donationRequest.start = ()->
     views:
       requestList: calatrava.bridge.pages.pageNamed "requestList"
       requestDetail: calatrava.bridge.pages.pageNamed "requestDetail"
-    repositories: 
+      addRequest: calatrava.bridge.pages.pageNamed "addRequest"
+    repositories:
       donationSearch: bloodTorrent.donationRequest.donationRequestRepository()
     changePage: calatrava.bridge.changePage
 

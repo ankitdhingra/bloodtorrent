@@ -7,7 +7,7 @@ bloodTorrent.donationRequest.controller = ({views, repositories, changePage}) ->
 
   fetchMatchingDonationRequests = () ->
     repositories.donationSearch.get
-      searchParams : {blood_group:"apositive"}
+      searchParams : {blood_group:"apositive", latitude: 18,longitude:73,radius: 1000}
       ifSucceded: (response) ->
         donationRequests = response
         views.requestList.render
