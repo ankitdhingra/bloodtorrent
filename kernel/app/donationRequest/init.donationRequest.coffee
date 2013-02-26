@@ -9,6 +9,5 @@ bloodTorrent.donationRequest.start = ()->
     repositories: 
       donationSearch: bloodTorrent.donationRequest.donationRequestRepository()
     changePage: calatrava.bridge.changePage
-    ajax: calatrava.bridge.request
 
   calatrava.bridge.changePage "requestList"

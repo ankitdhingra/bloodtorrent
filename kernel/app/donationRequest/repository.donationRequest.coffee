@@ -17,6 +17,8 @@ bloodTorrent.donationRequest.donationRequestRepository = () ->
       blood_group: request.blood_group
       quantity: request.quantity
       contact_details: request.contact_details
+      latitude: request.coordinates[0]
+      longitude: request.coordinates[1]
     
   get: (options) ->
     apiName = "donation/search"
