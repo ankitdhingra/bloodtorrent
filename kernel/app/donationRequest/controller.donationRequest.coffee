@@ -5,9 +5,9 @@ bloodTorrent.donationRequest.controller = ({views, repositories, changePage}) ->
 
   donationRequests = null
 
-  fetchMatchingDonationRequests = () ->
+  fetchMatchingDonationRequests = (geolocation) ->
     repositories.donationSearch.get
-      searchParams : {blood_group:"apositive", latitude: 18,longitude:73,radius: 1000}
+      searchParams : {blood_group:"apositive", latitude: geolocation.coords.latitude,longitude: geolocation.coords.longitude,radius: 1000}
       ifSucceded: (response) ->
         donationRequests = response
         views.requestList.render
@@ -31,6 +31,6 @@ bloodTorrent.donationRequest.controller = ({views, repositories, changePage}) ->
   views.requestList.bind 'donationRequest', show
 
   initialize = () ->
-    fetchMatchingDonationRequests()
+    calatrava.bridge.geolocation(fetchMatchingDonationRequests)
 
   initialize()
