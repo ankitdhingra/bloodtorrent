@@ -12,6 +12,8 @@
     %script(type="text/javascript" src="scripts/repository.donationRequest.js")
 
   %body
+    .app-header
+      %button#goHome Home
     %div#app_container.container
       - Calatrava::Project.current.mobile_web.haml_files.each do |hf|
         = render_partial hf

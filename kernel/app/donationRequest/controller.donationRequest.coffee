@@ -25,6 +25,9 @@ bloodTorrent.donationRequest.controller = ({views, repositories, changePage}) ->
     views.requestDetail.render
       requestDetail: getRequestDetail(requestId)
 
+  views.home.bind 'goHome', () -> calatrava.bridge.changePage "home"
+  views.home.bind 'addDonationRequestBtn', () -> calatrava.bridge.changePage "addRequest"
+  views.home.bind 'viewDonationListBtn', () -> calatrava.bridge.changePage "requestList"
   views.requestList.bind 'donationRequest', show
 
   initialize = () ->
