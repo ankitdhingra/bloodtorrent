@@ -202,5 +202,3 @@ calatrava.bridge.plugins = (() ->
 calatrava.bridge.plugin = (name, impl) ->
   calatrava.bridge.plugins.register(name, impl)
 
-calatrava.bridge.geolocation = (callback) ->
-  navigator.geolocation.getCurrentPosition(callback)

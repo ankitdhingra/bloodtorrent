@@ -31,6 +31,6 @@ bloodTorrent.donationRequest.controller = ({views, repositories, changePage}) ->
   views.requestList.bind 'donationRequest', show
 
   initialize = () ->
-    calatrava.bridge.geolocation(fetchMatchingDonationRequests)
+    calatrava.geolocation(fetchMatchingDonationRequests, () -> calatrava.alert('Geolocation Not Supported'))
 
   initialize()
