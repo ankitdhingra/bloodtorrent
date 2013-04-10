@@ -8,3 +8,10 @@ web/public/*
 ios/public/*
 ios/Pods/Pods.xcodeproj/
 tags
+droid/bloodtorrent/Bloodtorrent.iml
+droid/bloodtorrent/bin
+droid/bloodtorrent/ivy-report.css
+droid/bloodtorrent/ivy/
+droid/bloodtorrent/libs/
+droid/bloodtorrent/assets/
+droid/bloodtorrent/gen/
