@@ -3,25 +3,24 @@ package com.bloodtorrent;
 import com.calatrava.CalatravaPage;
 import com.calatrava.shell.WebViewActivity;
 
-import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
-@CalatravaPage(name = "conversionForm")
-public class ConversionForm extends WebViewActivity
+@CalatravaPage(name = "requestDetail")
+public class RequestDetail extends WebViewActivity
 {
   @Override
   protected String getPageName() {
-    return "conversionForm";
+    return "requestDetail";
   }
 
   @Override
   protected List<String> getEvents() {
-    return Arrays.asList("selectedInCurrency", "selectedOutCurrency", "convert");
+    return Arrays.asList();
   }
 
   @Override
   protected List<String> getFields() {
-    return Arrays.asList("in_amount", "in_currency", "out_amount", "out_currency");
+    return Arrays.asList();
   }
 }
