@@ -2,7 +2,7 @@ bloodTorrent ?= {}
 bloodTorrent.donationRequest ?= {}
 
 bloodTorrent.donationRequest.donationRequestRepository = () ->
- 
+
   stringifySearchParams: (options) ->
     paramsString = ""
     paramKeys = _.keys(options)
@@ -19,13 +19,13 @@ bloodTorrent.donationRequest.donationRequestRepository = () ->
       contact_details: request.contact_details
       latitude: request.coordinates[0]
       longitude: request.coordinates[1]
-    
+
   get: (options) ->
     apiName = "donation/search"
+    serviceEndpoint = calatrava.bridge.environment().serviceEndpoint
     calatrava.bridge.request
-      url: "http://localhost:8888/api/#{apiName}"
+      url: "#{serviceEndpoint}/#{apiName}?#{@stringifySearchParams(options.searchParams)}"
       method: 'GET'
-      body: @stringifySearchParams(options.searchParams)
       success: (responseData) =>
         response = JSON.parse responseData
         options.ifSucceded @extractRequestFrom(responseData)

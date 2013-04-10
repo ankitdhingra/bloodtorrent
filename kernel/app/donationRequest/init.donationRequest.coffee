@@ -12,4 +12,3 @@ bloodTorrent.donationRequest.start = ()->
       donationSearch: bloodTorrent.donationRequest.donationRequestRepository()
     changePage: calatrava.bridge.changePage
 
-  calatrava.bridge.changePage "home"

@@ -4,6 +4,7 @@ import android.app.Service;
 import android.content.Intent;
 import android.os.*;
 import android.util.Log;
+import org.codehaus.jackson.map.ObjectMapper;
 import org.mozilla.javascript.Context;
 import org.mozilla.javascript.Scriptable;
 import org.mozilla.javascript.ScriptableObject;
@@ -97,7 +98,7 @@ public class RhinoService extends Service {
     evaller.callJsFunction(function);
   }
 
-  public void callJsFunction(String function, String[] args) {
+  public void callJsFunction(String function, Object[] args) {
     evaller.callJsFunction(function, args);
   }
 
@@ -135,15 +136,21 @@ public class RhinoService extends Service {
       dispatchJs(js);
     }
 
-    public void callJsFunction(String function, String[] args) {
+    public void callJsFunction(String function, Object[] args) {
       StringBuilder sb = new StringBuilder("");
       boolean first = true;
-      for (String arg : args) {
+      ObjectMapper mapper = new ObjectMapper();
+
+      for (Object arg : args) {
         if (!first) {
           sb.append(",");
         }
         first = false;
-        sb.append("'" + arg + "'");
+          try {
+              sb.append(mapper.writeValueAsString(arg));
+          } catch (IOException e) {
+              sb.append("'" + arg.toString() + "'");
+          }
       }
 
       String js = "{0}({1});"

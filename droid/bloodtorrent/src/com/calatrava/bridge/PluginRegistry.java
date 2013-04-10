@@ -107,6 +107,6 @@ public class PluginRegistry {
 
   public void invokeCallback(String callbackHandle, Object data)
   {
-    rhino.callJsFunction("calatrava.inbound.invokePluginCallback", new String[] {callbackHandle, data.toString()});
+    rhino.callJsFunction("calatrava.inbound.invokePluginCallback", new Object[] {callbackHandle, data});
   }
 }

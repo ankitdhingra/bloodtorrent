@@ -33,7 +33,7 @@ public class AlertPlugin implements RegisteredPlugin
                 public void onClick(DialogInterface dialogInterface, int i) {
                   dialogInterface.dismiss();
                   if (isConfirmDialog) {
-                    AlertPlugin.this.registry.invokeCallback(currentOkCallbackHandle, 1);
+                    AlertPlugin.this.registry.invokeCallback(currentOkCallbackHandle, "1");
                   }
                 }
               });

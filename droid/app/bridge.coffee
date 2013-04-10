@@ -1,6 +1,9 @@
 calatrava ?= {}
 calatrava.bridge = calatrava.bridge ? {}
 
+calatrava.bridge.environment = () ->
+  serviceEndpoint: "http://bloodtorrent-service.herokuapp.com"
+
 calatrava.bridge.runtime = (() ->
   pages = {}
 

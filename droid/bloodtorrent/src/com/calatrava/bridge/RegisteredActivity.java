@@ -25,7 +25,6 @@ public abstract class RegisteredActivity extends Activity {
   private BroadcastReceiver receiver = new BroadcastReceiver() {
     @Override
     public void onReceive(Context context, Intent intent) {
-      Log.d(TAG, "Received broadcast");
       if (intent.getAction().endsWith("start")) {
         spinner.onLoadingStart();
       } else if (intent.getAction().endsWith("finish")) {

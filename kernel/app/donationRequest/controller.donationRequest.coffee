@@ -12,6 +12,7 @@ bloodTorrent.donationRequest.controller = ({views, repositories, changePage}) ->
         donationRequests = response
         views.requestList.render
           requestList: response
+      elseFailed: calatrava.alert
 
   getRequestDetail = (requestId) ->
     requestDetail = _.find(donationRequests, (object) ->
@@ -21,16 +22,21 @@ bloodTorrent.donationRequest.controller = ({views, repositories, changePage}) ->
     requestDetail
 
   show = (requestId) ->
-    calatrava.bridge.changePage "requestDetail"
+    views.requestDetail.bind 'pageOpened', () -> renderRequestDetail(requestId)
+    changePage "requestDetail"
+
+  renderRequestDetail = (requestId) ->
     views.requestDetail.render
       requestDetail: getRequestDetail(requestId)
 
-  views.home.bind 'goHome', () -> calatrava.bridge.changePage "home"
-  views.home.bind 'addDonationRequestBtn', () -> calatrava.bridge.changePage "addRequest"
-  views.home.bind 'viewDonationListBtn', () -> calatrava.bridge.changePage "requestList"
+  views.home.bind 'goHome', () -> changePage "home"
+  views.home.bind 'addDonationRequestBtn', () -> changePage "addRequest"
+  views.home.bind 'viewDonationListBtn', () -> changePage "requestList"
   views.requestList.bind 'donationRequest', show
 
+  views.home.bind 'pageOpened', () -> calatrava.geolocation(fetchMatchingDonationRequests, () -> calatrava.alert('Geolocation Not Supported'))
+
   initialize = () ->
-    calatrava.geolocation(fetchMatchingDonationRequests, () -> calatrava.alert('Geolocation Not Supported'))
+    changePage "home"
 
   initialize()
